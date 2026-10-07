@@ -1,0 +1,419 @@
+:root {
+  --accent: #FECB00;
+  --green: #4CAF50;
+  --blue: #2196F3;
+  --orange: #FF9800;
+  --red: #E63946;
+  --ink: #ffffff;
+  --body: #cecece;
+  --muted: #9aa5b1;
+  --line: rgba(255, 255, 255, 0.1);
+  --panel: rgba(255, 255, 255, 0.04);
+}
+
+.reveal {
+  color: var(--body);
+  font-size: 42px;
+  font-family: "Office Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  color: var(--body);
+  font-family: "Office Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: Bold;
+  text-transform: none;
+  text-shadow: none;
+}
+
+/* Universal background color, sits underneath backgrounds, etc. */
+body.reveal-viewport {
+    background-color: #121F2B;
+}
+
+.reveal h1 { /* Used for the title slide heading */
+  font-size: 1.7em;
+  color: #ffffff
+}
+.reveal h2 { /* Used for normal slide headings */
+  font-size: 1.5em;
+}
+.reveal h3 { /* Used for sub-slide headings */
+  font-size: 1.8em;
+}
+.reveal h4 { /* Could be used for intra-slide headings */
+  font-size: 1.5em;
+}
+.reveal .sourceCode {
+  font-size: 22px;
+}
+.reveal a {
+  color: var(--accent);
+}
+
+/* Hide the small global logo and footer ONLY on the title slide */
+.reveal:has(#title-slide.present) .slide-logo,
+
+/* Hide the footer when the 'hide-ui' state is active */
+.hide-ui .footer {
+    display: none !important;
+}
+
+/* Hide the global logo when the 'hide-ui' state is active */
+.hide-ui .slide-logo {
+    display: none !important;
+}
+
+.reveal .spaced-list li {
+  margin-bottom: 50px !important;
+}
+
+.reveal pre code {
+    max-height: 100% !important;
+  }
+
+/* ---------- Layout helpers ---------- */
+
+.reveal .grid2,
+.reveal .grid3,
+.reveal .grid4 {
+  display: grid;
+  gap: 28px;
+  margin-top: 30px;
+}
+.reveal .grid2 { grid-template-columns: repeat(2, 1fr); }
+.reveal .grid3 { grid-template-columns: repeat(3, 1fr); }
+.reveal .grid4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ---------- Cards ---------- */
+
+.reveal .card {
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 22px 28px;
+  box-sizing: border-box;
+  font-size: 0.7em;
+  line-height: 1.4;
+}
+.reveal .card.green  { border-top-color: var(--green); }
+.reveal .card.blue   { border-top-color: var(--blue); }
+.reveal .card.orange { border-top-color: var(--orange); }
+.reveal .card.red    { border-top-color: var(--red); }
+.reveal .card.grey   { border-top-color: #667; }
+
+.reveal .card .card-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: var(--ink);
+  margin: 0 0 12px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.reveal .card p { margin: 0 0 10px 0; }
+.reveal .card p:last-child { margin-bottom: 0; }
+.reveal .card ul { margin: 0 0 0 1em; }
+.reveal .card li { margin-bottom: 6px; }
+
+/* ---------- Text helpers ---------- */
+
+.reveal .muted { color: var(--muted); }
+.reveal .ink { color: var(--ink); }
+.reveal .hl { color: var(--accent); }
+.reveal .small { font-size: 0.6em; }
+.reveal .xsmall { font-size: 0.5em; }
+
+.reveal .kicker {
+  color: var(--accent);
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.5em;
+  margin-bottom: 6px;
+}
+
+.reveal .lead {
+  font-size: 0.75em;
+  color: var(--body);
+  margin-top: 10px;
+}
+
+.reveal .takeaway {
+  border-left: 6px solid var(--accent);
+  background-color: rgba(254, 203, 0, 0.06);
+  padding: 14px 26px;
+  margin-top: 32px;
+  font-size: 0.66em;
+  line-height: 1.4;
+}
+
+.reveal .tag {
+  display: inline-block;
+  background-color: #2a3947;
+  color: #dddddd;
+  border-radius: 12px;
+  padding: 2px 12px;
+  font-family: monospace;
+  font-size: 0.85em;
+  margin-right: 6px;
+}
+.reveal .tag.on {
+  background-color: var(--accent);
+  color: #121F2B;
+  font-weight: bold;
+}
+
+.reveal .status {
+  font-weight: bold;
+}
+.reveal .status.good { color: var(--green); }
+.reveal .status.warn { color: var(--orange); }
+.reveal .status.info { color: var(--blue); }
+.reveal .status.bad  { color: var(--red); }
+
+/* ---------- Stat tiles ---------- */
+
+.reveal .stat .value {
+  font-size: 2.3em;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.reveal .stat .src {
+  color: var(--muted);
+  font-size: 0.85em;
+  margin-top: 8px;
+}
+
+/* ---------- Tables ---------- */
+
+.reveal .compact-table table {
+  font-size: 0.54em;
+  line-height: 1.3;
+  width: 100%;
+}
+.reveal .compact-table table th {
+  color: var(--ink);
+  border-bottom: 2px solid var(--accent);
+}
+.reveal .compact-table table td,
+.reveal .compact-table table th {
+  padding: 10px 14px;
+  vertical-align: top;
+}
+.reveal .compact-table table tr:nth-child(even) td {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* ---------- FLIWBO loop diagram ---------- */
+
+.reveal .loop {
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+  margin-top: 30px;
+  font-size: 0.55em;
+  line-height: 1.35;
+}
+.reveal .loop .step {
+  flex: 1;
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px 20px;
+}
+.reveal .loop .step strong {
+  display: block;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.reveal .loop .arrow {
+  align-self: center;
+  color: var(--accent);
+  font-size: 1.6em;
+}
+
+/* ---------- Before/after figure pair ---------- */
+
+.reveal .before-after {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 30px;
+  align-items: end;
+}
+.reveal .before-after .arrow {
+  align-self: center;
+  color: var(--accent);
+  font-size: 2.2em;
+  font-weight: bold;
+  padding-top: 40px; /* centre on the frames, not on frame + label */
+}
+/* White, rounded frame so the figures' white backgrounds sit well on the dark slide */
+.reveal .figure-frame {
+  height: 600px;
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 24px;
+  box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reveal .figure-frame img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  object-fit: contain;
+}
+.reveal .credit {
+  color: var(--muted);
+  font-size: 0.45em;
+  margin-top: 16px;
+  text-align: right;
+}
+
+/* ---------- Capability list ---------- */
+
+.reveal .caps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.68em;
+}
+.reveal .caps li {
+  padding: 14px 20px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+}
+.reveal .caps li.on {
+  border: 2px solid var(--accent);
+  background-color: rgba(254, 203, 0, 0.06);
+  color: var(--ink);
+}
+
+/* ---------- Timeline ---------- */
+
+.reveal .timeline {
+  display: grid;
+  grid-template-columns: 300px repeat(7, 1fr);
+  row-gap: 12px;
+  column-gap: 0;
+  font-size: 0.5em;
+  margin-top: 26px;
+  align-items: center;
+}
+.reveal .timeline .month {
+  color: var(--muted);
+  font-family: monospace;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 6px;
+}
+.reveal .timeline .lane {
+  color: var(--ink);
+  font-weight: bold;
+  padding-right: 14px;
+}
+.reveal .timeline .bar {
+  background-color: rgba(33, 150, 243, 0.18);
+  border-left: 4px solid var(--blue);
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin: 0 3px;
+  line-height: 1.3;
+}
+.reveal .timeline .bar.accent {
+  background-color: rgba(254, 203, 0, 0.12);
+  border-left-color: var(--accent);
+}
+.reveal .timeline .bar.green {
+  background-color: rgba(76, 175, 80, 0.15);
+  border-left-color: var(--green);
+}
+.reveal .timeline .bar.grey {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-left-color: #667;
+}
+
+/* ---------- Workshop questions ---------- */
+
+.reveal .questions {
+  counter-reset: q;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 40px;
+  font-size: 0.75em;
+  line-height: 1.4;
+}
+.reveal .questions li {
+  counter-increment: q;
+  position: relative;
+  padding: 18px 22px 18px 80px;
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.reveal .questions li::before {
+  content: counter(q);
+  position: absolute;
+  left: 22px;
+  top: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: #121F2B;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+}
+.reveal .questions li strong { color: var(--ink); }
+
+/* ---------- Quote ---------- */
+
+.reveal .quote {
+  border-left: 4px solid var(--blue);
+  padding: 4px 0 4px 24px;
+  font-style: italic;
+  color: var(--body);
+}
+
+/* ---------- Responsive vertical layout ----------
+   Slide height follows the viewport aspect ratio (responsive.html). Each slide
+   is a full-height flex column: the title stays on top, blocks keep their
+   natural height, and the free space is shared out as equal gaps between the
+   title, each block and the bottom of the slide. */
+
+.reveal .slides section {
+  flex-direction: column;
+}
+.reveal .slides section.slide.level2:not(.center) {
+  height: 100%;
+  box-sizing: border-box;
+  padding-bottom: 80px; /* clearance for the footer */
+}
+.reveal .slides section.slide.level2 > * {
+  flex: none;
+}
+.reveal .slides section.slide.level2:not(.center) > :not(h2):not(.lead):not(.credit) {
+  margin-top: auto;
+}
+.reveal .slides section.slide.level2:not(.center)::after {
+  content: "";
+  margin-top: auto;
+}
+.reveal .card.stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
