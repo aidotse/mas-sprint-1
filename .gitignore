@@ -6,6 +6,7 @@
 # Ignore the rendered HTML (Optional, but recommended if using CI/CD)
 # Comment this out if you need to host directly from the main branch!
 *.html
+!responsive.html
 *.pdf
 
 # --- Python & Environment ---
@@ -20,3 +21,6 @@ __pycache__/
 Thumbs.db
 
 *.zip
+
+# --- Tooling ---
+.serena/

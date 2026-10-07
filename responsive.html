@@ -1,0 +1,22 @@
+<script>
+// Fit the slide height to the viewport's aspect ratio instead of locking it to 16:9.
+// The width stays at 1920 so font scaling is consistent; the height follows the screen
+// (clamped between 16:9 and 4:3), so 16:10 laptops get a taller slide rather than
+// letterboxing. Slides are flex columns (see style.css) whose main block grows into the
+// extra height. Print/PDF export keeps the fixed 1920x1080 layout.
+window.addEventListener("load", function () {
+  if (/print-pdf/i.test(window.location.search)) return;
+
+  var WIDTH = 1920, MIN_HEIGHT = 1080, MAX_HEIGHT = 1440;
+
+  function fit() {
+    var h = Math.round(WIDTH * window.innerHeight / window.innerWidth);
+    h = Math.min(MAX_HEIGHT, Math.max(MIN_HEIGHT, h));
+    if (h !== Reveal.getConfig().height) Reveal.configure({ height: h });
+  }
+
+  Reveal.configure({ display: "flex" });
+  fit();
+  window.addEventListener("resize", fit);
+});
+</script>
